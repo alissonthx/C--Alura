@@ -24,23 +24,55 @@ namespace CSharpCollections
             aulas[1] = aulaModelando;
             aulas[2] = aulaSets;
 
-            System.Console.WriteLine(aulas);
-            System.Console.WriteLine(aulas[0]);
-            System.Console.WriteLine(aulas[aulas.Length - 1]);
+            Console.WriteLine(aulas);
+            Console.WriteLine(aulas[0]);
+            Console.WriteLine(aulas[aulas.Length - 1]);
 
             aulas[0] = "Trabalhando com arrays";
-            Print(aulas);
+            Imprimir(aulas);
+            Console.WriteLine("Aula modelando está no indice " + Array.IndexOf(aulas, aulaModelando));
+            Console.WriteLine("Aula modelando está no indice" + Array.LastIndexOf(aulas, aulaModelando));
+
+            Array.Reverse(aulas);
+            Imprimir(aulas);
+
+            Array.Reverse(aulas);
+            Imprimir(aulas);
+
+            Array.Resize(ref aulas, 2);
+            Imprimir(aulas);
+
+
+            // output array[2] = null
+            Array.Resize(ref aulas, 3);
+            Imprimir(aulas);
+
+            aulas[aulas.Length - 1] = "Conclusão";
+
+            Array.Sort(aulas);
+            Imprimir(aulas);
+
+            string[] copia = new string[2];
+            Array.Copy(aulas, 1, copia,0, 2);
+            Imprimir(copia);
+
+            string[] clone = aulas.Clone() as string[];
+            Imprimir(clone);
+
+            // output array[2], [3] = null
+            Array.Clear(clone, 1, 2);
+            Imprimir(clone);
         }
 
-        private static void Print(string[] aulas)
+        private static void Imprimir(string[] aulas)
         {
             // foreach (var aula in aulas){
-            //     System.Console.WriteLine(aula);
+            //     Console.WriteLine(aula);
             // }
 
             for (int i = 0; i < aulas.Length; i++)
             {
-                System.Console.WriteLine(aulas[i]);
+                Console.WriteLine(aulas[i]);
             }
         }
     }
