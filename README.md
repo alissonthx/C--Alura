@@ -1,1 +1,1 @@
-<h1>C# Collections parte 1: Listas, arrays, listas ligadas, dicionários e conjuntos</h1>
+<h1>C# Collections: Lists, arrays, linked lists , dictionary and sets</h1>
